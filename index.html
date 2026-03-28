@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heeseon Jang Portfolio</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="custom-cursor" aria-hidden="true">
+      <img src="./image/mouse%20cursor_S3.png" alt="" />
+    </div>
+    <div class="site-frame">
+      <aside class="sidebar">
+        <div class="sidebar__top">
+          <button class="brand brand-button" type="button" data-go-home>
+            <p>Brand Deisgner</p>
+            <p>Heeseon Jang</p>
+          </button>
+
+          <nav class="sidebar-nav">
+            <button class="nav-action" type="button" data-open-info>Information</button>
+            <a href="mailto:hello@heeseonjang.com">Email</a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+          </nav>
+
+          <section class="project-menu">
+            <p class="project-menu__title">Projects</p>
+            <button class="project-menu__item" data-project-target="project-1">Project 1</button>
+            <button class="project-menu__item" data-project-target="project-2">Project 2</button>
+            <button class="project-menu__item" data-project-target="project-3">Project 3</button>
+          </section>
+        </div>
+
+        <div class="sidebar__bottom">
+          <a class="top-link" href="#top">Top →</a>
+          <p class="clock" data-clock>00:00:00</p>
+        </div>
+      </aside>
+
+      <main class="content" id="top">
+        <section class="index-view is-active">
+          <div class="content-head">
+            <span>(Works)</span>
+          </div>
+
+          <div class="works-list">
+            <article class="work-card work-card--top" data-open-project="project-1">
+              <div class="work-card__text">
+                <h2>NUDIA</h2>
+                <p>(BI/BX)</p>
+              </div>
+              <div class="work-card__media placeholder placeholder--tall">
+                <span>00-1<br />Placeholder Image<br />Cargo®</span>
+              </div>
+            </article>
+
+            <article class="work-card work-card--middle" data-open-project="project-2">
+              <div class="work-card__text">
+                <h2>Gluet F&amp;B</h2>
+                <p>(BX/Package)</p>
+              </div>
+              <div class="work-card__media placeholder placeholder--wide">
+                <span>00-2<br />Placeholder Image<br />Cargo®</span>
+              </div>
+            </article>
+
+            <article class="work-card work-card--bottom" data-open-project="project-3">
+              <div class="work-card__text">
+                <h2>Project Three</h2>
+                <p>(Campaign)</p>
+              </div>
+              <div class="work-row">
+                <div class="work-card__media placeholder placeholder--wide">
+                  <span>00-3<br />Placeholder Image<br />Cargo®</span>
+                </div>
+                <div class="work-card__media placeholder placeholder--wide">
+                  <span>00-4<br />Placeholder Image<br />Cargo®</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="info-view">
+          <div class="content-head">
+            <button class="back-link" type="button" data-go-home>Close</button>
+          </div>
+
+          <div class="info-table">
+            <article class="info-row">
+              <h2>About</h2>
+              <div class="info-row__content">
+                <p class="info-row__title">Heeseon Jang</p>
+                <p>
+                  브랜드의 분위기와 메시지를 한 화면 안에서 명확하게 읽히도록 설계하는 브랜드
+                  디자이너입니다. BX, BI, 패키지, 디지털 비주얼 시스템까지 연결되는 작업을
+                  중심으로 포트폴리오를 구성하고 있습니다.
+                </p>
+              </div>
+            </article>
+
+            <article class="info-row">
+              <h2>Contact</h2>
+              <div class="info-row__content">
+                <p><a href="mailto:hello@heeseonjang.com">hello@heeseonjang.com</a></p>
+                <p><a href="tel:+821012345678">+82 10 1234 5678</a></p>
+              </div>
+            </article>
+
+            <article class="info-row">
+              <h2>Experience</h2>
+              <div class="info-row__content info-row__content--stack">
+                <div>
+                  <p class="info-row__title">Studio Archive</p>
+                  <p>Brand Designer</p>
+                  <p>2024 - Present</p>
+                </div>
+                <div>
+                  <p class="info-row__title">Freelance Projects</p>
+                  <p>BX, Package, Campaign Identity</p>
+                  <p>2022 - Present</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="info-row">
+              <h2>Education</h2>
+              <div class="info-row__content">
+                <p class="info-row__title">Bachelor of Design</p>
+                <p>Visual Communication Design</p>
+                <p>2018 - 2022</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="detail-view">
+          <div class="content-head">
+            <button class="back-link" data-back-to-grid>Back →</button>
+          </div>
+
+          <div class="detail-track">
+            <article class="detail-panel detail-panel--scroll" data-project-id="project-1">
+              <div class="detail-panel__heading">
+                <div>
+                  <h2>NUDIA</h2>
+                  <p>(BI/BX)</p>
+                </div>
+                <div class="detail-panel__meta">
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+
+              <div class="detail-scroll-area">
+                <div class="detail-gallery detail-gallery--stack detail-gallery--upload"></div>
+              </div>
+            </article>
+
+            <article class="detail-panel detail-panel--scroll" data-project-id="project-2">
+              <div class="detail-panel__heading">
+                <div>
+                  <h2>Gluet F&amp;B</h2>
+                  <p>(BX/Package)</p>
+                </div>
+                <div class="detail-panel__meta">
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+
+              <div class="detail-scroll-area">
+                <div class="detail-gallery detail-gallery--stack detail-gallery--upload"></div>
+              </div>
+            </article>
+
+            <article class="detail-panel detail-panel--scroll" data-project-id="project-3">
+              <div class="detail-panel__heading">
+                <div>
+                  <h2>Black Week</h2>
+                  <p>(Campaign)</p>
+                </div>
+                <div class="detail-panel__meta">
+                  <span>Visual Campaign</span>
+                  <span>2023</span>
+                </div>
+              </div>
+
+              <div class="detail-scroll-area">
+                <div class="detail-gallery detail-gallery--stack">
+                  <figure class="gallery-card">
+                    <img src="./image/blackweek-1.png" alt="Black Week image 1" />
+                    <div class="detail-copy detail-copy--inline">
+                      <div>
+                        <p class="detail-copy__title">Black Week</p>
+                        <p>Campaign Direction</p>
+                      </div>
+                      <p>
+                        블랙위크 프로젝트는 프로모션 시즌을 위한 비주얼 캠페인 작업입니다. 시즌
+                        메시지를 또렷하게 전달하는 강한 그래픽과 모바일, 웹, 프로모션 비주얼을
+                        한 흐름으로 연결해 몰입감 있는 경험을 구성했습니다.
+                      </p>
+                    </div>
+                  </figure>
+                  <figure class="gallery-card">
+                    <img src="./image/blackweek-2.png" alt="Black Week image 2" />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img src="./image/blackweek-3.png" alt="Black Week image 3" />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img src="./image/blackweek-4.png" alt="Black Week image 4" />
+                  </figure>
+                  <figure class="gallery-card">
+                    <img src="./image/blackweek-5.png" alt="Black Week image 5" />
+                  </figure>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

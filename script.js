@@ -9,6 +9,8 @@ const projectMenuItems = document.querySelectorAll("[data-project-target]");
 const backButton = document.querySelector("[data-back-to-grid]");
 const homeButtons = document.querySelectorAll("[data-go-home]");
 const infoButton = document.querySelector("[data-open-info]");
+const menuToggleButton = document.querySelector("[data-menu-toggle]");
+const sidebar = document.querySelector(".sidebar");
 const clock = document.querySelector("[data-clock]");
 const galleryImages = document.querySelectorAll(".gallery-card img");
 const customCursor = document.querySelector(".custom-cursor");
@@ -50,6 +52,20 @@ function openInfo() {
   showView("info");
 }
 
+function closeMobileMenu() {
+  if (!sidebar || !menuToggleButton) return;
+
+  sidebar.classList.remove("is-menu-open");
+  menuToggleButton.setAttribute("aria-expanded", "false");
+}
+
+function toggleMobileMenu() {
+  if (!sidebar || !menuToggleButton) return;
+
+  const isOpen = sidebar.classList.toggle("is-menu-open");
+  menuToggleButton.setAttribute("aria-expanded", String(isOpen));
+}
+
 function updateClock() {
   if (!clock) return;
 
@@ -69,18 +85,34 @@ function moveCursor(event) {
 }
 
 projectCards.forEach((card) => {
-  card.addEventListener("click", () => openProject(card.dataset.openProject));
+  card.addEventListener("click", () => {
+    closeMobileMenu();
+    openProject(card.dataset.openProject);
+  });
 });
 
 projectMenuItems.forEach((item) => {
-  item.addEventListener("click", () => openProject(item.dataset.projectTarget));
+  item.addEventListener("click", () => {
+    closeMobileMenu();
+    openProject(item.dataset.projectTarget);
+  });
 });
 
 backButton.addEventListener("click", closeProject);
-infoButton.addEventListener("click", openInfo);
-homeButtons.forEach((button) => {
-  button.addEventListener("click", closeProject);
+infoButton.addEventListener("click", () => {
+  closeMobileMenu();
+  openInfo();
 });
+homeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    closeMobileMenu();
+    closeProject();
+  });
+});
+
+if (menuToggleButton) {
+  menuToggleButton.addEventListener("click", toggleMobileMenu);
+}
 
 galleryImages.forEach((image) => {
   image.addEventListener("error", () => {
@@ -95,6 +127,11 @@ window.addEventListener("mousemove", moveCursor);
 window.addEventListener("mouseleave", () => {
   if (!customCursor) return;
   customCursor.style.opacity = "0";
+});
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 820) {
+    closeMobileMenu();
+  }
 });
 
 setActiveMenu(projectOrder[0]);

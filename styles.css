@@ -81,6 +81,11 @@ button {
   gap: 72px;
 }
 
+.sidebar__header {
+  display: grid;
+  gap: 18px;
+}
+
 .brand p,
 .project-menu__title,
 .clock,
@@ -98,6 +103,19 @@ button {
   display: grid;
   justify-items: start;
   text-align: left;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  width: fit-content;
+  font-size: 0.98rem;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.sidebar__menu {
+  display: grid;
+  gap: 72px;
 }
 
 .sidebar-nav,
@@ -553,12 +571,40 @@ button {
 
   .sidebar {
     position: relative;
+    min-height: auto;
     height: auto;
-    gap: 48px;
+    gap: 24px;
+  }
+
+  .sidebar__top {
+    gap: 28px;
+  }
+
+  .sidebar__bottom {
+    position: fixed;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    z-index: 50;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+
+  .sidebar__menu {
+    display: none;
+    gap: 32px;
+  }
+
+  .sidebar.is-menu-open .sidebar__menu {
+    display: grid;
   }
 
   .content {
-    padding: 0 18px 18px;
+    padding: 0 18px 84px;
   }
 
   .work-card--top,

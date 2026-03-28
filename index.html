@@ -13,23 +13,35 @@
     <div class="site-frame">
       <aside class="sidebar">
         <div class="sidebar__top">
-          <button class="brand brand-button" type="button" data-go-home>
-            <p>Brand Deisgner</p>
-            <p>Heeseon Jang</p>
-          </button>
+          <div class="sidebar__header">
+            <button class="brand brand-button" type="button" data-go-home>
+              <p>Brand Deisgner</p>
+              <p>Heeseon Jang</p>
+            </button>
+            <button
+              class="mobile-menu-toggle"
+              type="button"
+              data-menu-toggle
+              aria-expanded="false"
+            >
+              Menu
+            </button>
+          </div>
 
-          <nav class="sidebar-nav">
-            <button class="nav-action" type="button" data-open-info>Information</button>
-            <a href="mailto:hello@heeseonjang.com">Email</a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-          </nav>
+          <div class="sidebar__menu" data-mobile-menu>
+            <nav class="sidebar-nav">
+              <button class="nav-action" type="button" data-open-info>Information</button>
+              <a href="mailto:hello@heeseonjang.com">Email</a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+            </nav>
 
-          <section class="project-menu">
-            <p class="project-menu__title">Projects</p>
-            <button class="project-menu__item" data-project-target="project-1">Project 1</button>
-            <button class="project-menu__item" data-project-target="project-2">Project 2</button>
-            <button class="project-menu__item" data-project-target="project-3">Project 3</button>
-          </section>
+            <section class="project-menu">
+              <p class="project-menu__title">Projects</p>
+              <button class="project-menu__item" data-project-target="project-1">Project 1</button>
+              <button class="project-menu__item" data-project-target="project-2">Project 2</button>
+              <button class="project-menu__item" data-project-target="project-3">Project 3</button>
+            </section>
+          </div>
         </div>
 
         <div class="sidebar__bottom">

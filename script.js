@@ -4,11 +4,13 @@ const indexView = document.querySelector(".index-view");
 const infoView = document.querySelector(".info-view");
 const detailView = document.querySelector(".detail-view");
 const detailTrack = document.querySelector(".detail-track");
+const detailPanels = document.querySelectorAll(".detail-panel");
 const projectCards = document.querySelectorAll("[data-open-project]");
 const projectMenuItems = document.querySelectorAll("[data-project-target]");
 const backButton = document.querySelector("[data-back-to-grid]");
 const homeButtons = document.querySelectorAll("[data-go-home]");
 const infoButton = document.querySelector("[data-open-info]");
+const infoNavButton = document.querySelector("[data-nav-info]");
 const menuToggleButton = document.querySelector("[data-menu-toggle]");
 const sidebar = document.querySelector(".sidebar");
 const clock = document.querySelector("[data-clock]");
@@ -21,6 +23,9 @@ function showView(viewName) {
   indexView.classList.toggle("is-active", viewName === "index");
   infoView.classList.toggle("is-active", viewName === "info");
   detailView.classList.toggle("is-active", viewName === "detail");
+  if (infoNavButton) {
+    infoNavButton.classList.toggle("is-active", viewName === "info");
+  }
 }
 
 function setActiveMenu(projectId) {
@@ -30,7 +35,11 @@ function setActiveMenu(projectId) {
 }
 
 function moveTrack(index) {
-  detailTrack.style.transform = `translateX(-${index * 33.3333}%)`;
+  const projectId = projectOrder[index];
+
+  detailPanels.forEach((panel) => {
+    panel.classList.toggle("is-active", panel.dataset.projectId === projectId);
+  });
 }
 
 function openProject(projectId) {
@@ -45,10 +54,15 @@ function openProject(projectId) {
 }
 
 function closeProject() {
+  setActiveMenu("");
+  detailPanels.forEach((panel) => {
+    panel.classList.remove("is-active");
+  });
   showView("index");
 }
 
 function openInfo() {
+  setActiveMenu("");
   showView("info");
 }
 
@@ -134,7 +148,7 @@ window.addEventListener("resize", () => {
   }
 });
 
-setActiveMenu(projectOrder[0]);
+setActiveMenu("");
 showView("index");
 updateClock();
 window.setInterval(updateClock, 1000);

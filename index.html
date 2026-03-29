@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Heeseon Jang Portfolio</title>
+    <title>heeseonjang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -30,13 +36,13 @@
 
           <div class="sidebar__menu" data-mobile-menu>
             <nav class="sidebar-nav">
-              <button class="nav-action" type="button" data-open-info>Information</button>
+              <button class="nav-action" type="button" data-open-info data-nav-info>About</button>
               <a href="mailto:hello@heeseonjang.com">Email</a>
               <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
             </nav>
 
             <section class="project-menu">
-              <p class="project-menu__title">Projects</p>
+              <p class="project-menu__title">Works</p>
               <button class="project-menu__item" data-project-target="project-1">Project 1</button>
               <button class="project-menu__item" data-project-target="project-2">Project 2</button>
               <button class="project-menu__item" data-project-target="project-3">Project 3</button>
@@ -57,37 +63,56 @@
           </div>
 
           <div class="works-list">
-            <article class="work-card work-card--top" data-open-project="project-1">
+            <article class="work-card work-card--double" data-open-project="project-1">
               <div class="work-card__text">
-                <h2>NUDIA</h2>
-                <p>(BI/BX)</p>
-              </div>
-              <div class="work-card__media placeholder placeholder--tall">
-                <span>00-1<br />Placeholder Image<br />Cargo®</span>
-              </div>
-            </article>
-
-            <article class="work-card work-card--middle" data-open-project="project-2">
-              <div class="work-card__text">
-                <h2>Gluet F&amp;B</h2>
-                <p>(BX/Package)</p>
-              </div>
-              <div class="work-card__media placeholder placeholder--wide">
-                <span>00-2<br />Placeholder Image<br />Cargo®</span>
-              </div>
-            </article>
-
-            <article class="work-card work-card--bottom" data-open-project="project-3">
-              <div class="work-card__text">
-                <h2>Project Three</h2>
-                <p>(Campaign)</p>
-              </div>
-              <div class="work-row">
-                <div class="work-card__media placeholder placeholder--wide">
-                  <span>00-3<br />Placeholder Image<br />Cargo®</span>
+                <div class="work-card__meta">
+                  <div>
+                    <p class="work-card__title">Main title</p>
+                    <p class="work-card__detail">Brand Identity / Digital Design / 2026</p>
+                  </div>
                 </div>
-                <div class="work-card__media placeholder placeholder--wide">
-                  <span>00-4<br />Placeholder Image<br />Cargo®</span>
+              </div>
+              <div class="work-card__system work-card__system--double">
+                <div class="work-card__media work-card__media--portrait">
+                  <span></span>
+                </div>
+                <div class="work-card__media work-card__media--landscape">
+                  <span></span>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card work-card--single" data-open-project="project-2">
+              <div class="work-card__text">
+                <div class="work-card__meta">
+                  <div>
+                    <p class="work-card__title">Main title</p>
+                    <p class="work-card__detail">Visual Graphic / Campaign / 2025</p>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card__system work-card__system--single">
+                <div class="work-card__media work-card__media--landscape">
+                  <span></span>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card work-card--double work-card--double-reverse" data-open-project="project-3">
+              <div class="work-card__text">
+                <div class="work-card__meta">
+                  <div>
+                    <p class="work-card__title">Main title</p>
+                    <p class="work-card__detail">Exhibition / Editorial / 2024</p>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card__system work-card__system--double work-card__system--reverse">
+                <div class="work-card__media work-card__media--landscape">
+                  <span></span>
+                </div>
+                <div class="work-card__media work-card__media--portrait">
+                  <span></span>
                 </div>
               </div>
             </article>

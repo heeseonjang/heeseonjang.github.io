@@ -4,6 +4,8 @@
   --muted: #767676;
   --line: #cfcfcf;
   --panel: #f1f1f1;
+  --content-start: 74px;
+  --content-width: 1040px;
   --font-en: "Inter", sans-serif;
   --font-ko: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   --font-ui: "Inter", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR",
@@ -94,7 +96,7 @@ button {
 
 .sidebar__top {
   display: grid;
-  gap: 72px;
+  gap: 50px;
 }
 
 .sidebar__header {
@@ -275,6 +277,11 @@ button {
   display: block;
 }
 
+.info-view,
+.detail-view {
+  padding-top: var(--content-start);
+}
+
 .content-head {
   display: flex;
   justify-content: flex-end;
@@ -283,7 +290,9 @@ button {
   font-size: 12pt;
 }
 
-.index-view .content-head {
+.index-view .content-head,
+.info-view .content-head,
+.detail-view .content-head {
   position: fixed;
   top: 12px;
   right: 18px;
@@ -298,7 +307,8 @@ button {
 }
 
 .info-table {
-  border-top: 1px solid var(--line);
+  width: min(100%, var(--content-width));
+  margin-left: auto;
 }
 
 .info-row {
@@ -306,7 +316,11 @@ button {
   grid-template-columns: 180px minmax(0, 1fr);
   gap: 24px;
   padding: 12px 0 18px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--text);
+}
+
+.info-row:first-child {
+  padding-top: 0;
 }
 
 .info-row h2,
@@ -342,9 +356,9 @@ button {
   align-items: start;
   justify-content: stretch;
   gap: 72px;
-  padding-top: 24px;
+  padding-top: var(--content-start);
   width: 100%;
-  max-width: 1180px;
+  max-width: var(--content-width);
   margin-left: auto;
 }
 
@@ -376,6 +390,10 @@ button {
 
 .work-card__text {
   margin-bottom: 14px;
+}
+
+.work-card:first-child .work-card__text {
+  padding-top: 0;
 }
 
 .work-card__detail {
@@ -485,7 +503,7 @@ button {
 .detail-panel {
   display: none;
   width: 100%;
-  padding-top: 22px;
+  padding-top: 0;
 }
 
 .detail-panel.is-active {
@@ -493,12 +511,11 @@ button {
 }
 
 .detail-panel--scroll {
-  grid-template-rows: auto minmax(0, 1fr);
-  height: calc(100vh - 92px);
+  height: auto;
 }
 
 .detail-panel--scroll.is-active {
-  display: grid;
+  display: block;
 }
 
 .detail-panel__heading {
@@ -506,8 +523,14 @@ button {
   grid-template-columns: minmax(220px, 0.5fr) minmax(0, 1fr);
   gap: 26px;
   align-items: end;
-  width: min(100%, 940px);
+  width: min(100%, var(--content-width));
   margin-left: auto;
+  margin-top: 0;
+}
+
+.detail-panel__heading h2,
+.detail-panel__heading p {
+  margin: 0;
 }
 
 .detail-panel__meta {
@@ -521,7 +544,7 @@ button {
   position: relative;
   width: min(100%, 940px);
   height: 700px;
-  margin: 26px 0 18px auto;
+  margin: 26px 0 18px 0;
   overflow: hidden;
   border-radius: 24px;
 }
@@ -574,7 +597,7 @@ button {
   grid-template-columns: minmax(200px, 0.4fr) minmax(0, 1fr);
   gap: 26px;
   align-items: start;
-  width: min(100%, 940px);
+  width: min(100%, var(--content-width));
   margin-left: auto;
   font-size: 11.5pt;
   line-height: 1.5;
@@ -593,7 +616,7 @@ button {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
-  width: min(100%, 940px);
+  width: min(100%, var(--content-width));
   margin: 26px 0 18px auto;
 }
 
@@ -606,15 +629,15 @@ button {
 }
 
 .detail-gallery--upload {
-  min-height: calc(100vh - 210px);
+  min-height: 0;
 }
 
 .detail-scroll-area {
-  width: min(100%, 940px);
+  width: min(100%, var(--content-width));
   margin: 26px 0 0 auto;
-  min-height: 0;
-  overflow-y: auto;
-  overscroll-behavior: contain;
+  min-height: auto;
+  overflow: visible;
+  overscroll-behavior: auto;
 }
 
 .gallery-card {
@@ -638,11 +661,7 @@ button {
 
 .gallery-card img {
   cursor: none;
-  transition: transform 180ms ease, box-shadow 180ms ease;
-}
-
-.gallery-card:hover img {
-  transform: translateY(-10px);
+  transition: none;
 }
 
 .gallery-card--hero img,
@@ -652,9 +671,9 @@ button {
 
 .detail-gallery--stack .gallery-card img,
 .detail-gallery--stack .gallery-card .gallery-fallback {
-  aspect-ratio: auto;
+  aspect-ratio: 16 / 9;
   height: auto;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 .detail-gallery--stack .gallery-card {
@@ -668,15 +687,6 @@ button {
 
 .detail-gallery--stack .gallery-card figcaption {
   margin-top: 8px;
-}
-
-.detail-scroll-area::-webkit-scrollbar {
-  width: 8px;
-}
-
-.detail-scroll-area::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.15);
-  border-radius: 999px;
 }
 
 .gallery-fallback {
@@ -706,7 +716,9 @@ button {
     grid-template-columns: 220px minmax(0, 1fr);
   }
 
-  .index-view .content-head {
+  .index-view .content-head,
+  .info-view .content-head,
+  .detail-view .content-head {
     right: 18px;
   }
 
@@ -773,7 +785,9 @@ button {
     padding: 0 18px 84px;
   }
 
-  .index-view .content-head {
+  .index-view .content-head,
+  .info-view .content-head,
+  .detail-view .content-head {
     position: fixed;
     top: 18px;
     right: 18px;
